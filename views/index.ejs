@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Link to Bootstrap 4.6.0 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <!-- Link to CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,400&display=swap"
+            rel="stylesheet">
+
+
+        <title>Penggapai Near You</title>
+
+    </head>
+
+    <body>
+
+        <%- include ("partials/header.ejs") %>
+
+            <div id="home">
+                <div class="container">
+                    <div class="main">
+                        <h1>Penggapai Near You</h1>
+                        <h5>Ease the burden of losing a loved one</h5>
+                    </div>
+                    <link rel="stylesheet"
+                        href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.1.3/dist/css/autoComplete.min.css">
+                    <!--SEARCH BOX-->
+                    <div class="autoComplete_wrapper col-sm-12 text-center " id="searchbox">
+                        <form class="form-inline my-2 my-lg-0 justify-content-center" id="form" action="/users/search"
+                            method="POST">
+                            <input id="autoComplete" type="search" dir="ltr" spellcheck=false autocorrect="off"
+                                autocomplete="off" autocapitalize="off" class="form-control mr-sm-2 col-sm-9"
+                                style="min-width:50vw" name="kampung">
+                            <input class="btn btn-danger my-2 my-sm-0 col-sm-2" type="submit" value="Search"
+                                style="color:white;">
+                        </form>
+                    </div>
+
+                    <script
+                        src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.1.3/dist/autoComplete.min.js"></script>
+                    <script>
+                        const autoCompleteJS = new autoComplete({
+                            placeHolder: "Enter Your Kampung...",
+                            data: {
+                                src: ["Kg. Rimba Gadong", "Kg. Mata Mata", "Kg. Discord Bising"],
+                                cache: true,
+                            },
+                            resultItem: {
+                                highlight: true
+                            },
+                            events: {
+                                input: {
+                                    selection: (event) => {
+                                        const selection = event.detail.selection.value;
+                                        autoCompleteJS.input.value = selection;
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-8" id="about">
+
+                        <div class="description my-3 mx-5">
+                            <h3>About Us</h3>
+                            <br>
+                            <p class="desc mx-auto text-justify">
+                                PNY is a Brunei-based team of young adult developers. It is created with an aim to
+                                provide service for the public to search for the nearest and accessible local
+                                professionals (Penggapai) in times of grief needs for the deceased families
+                            </p>
+
+                            <br><br>
+
+                            <h4>What is a Penggapai?</h4>
+                            <br>
+                            <p class="desc mx-auto text-justify">
+                                Penggapai is a person qualified to perform proper steps or rituals of handling a
+                                deceased body and burial according to Islamic teaching.
+                            </p>
+                            <p class="desc mx-auto text-justify">
+                                A penggapai helps with the procedures of Fardhu Kifayah - bathing the deceased, wrapping
+                                them in kafan cloth (Shrouding) before performing Jenazah prayer for the deceased.
+                            </p>
+
+                            <br><br>
+
+                            <h4>Our Services</h4>
+                            <br>
+                            <p class="desc mx-auto text-justify">
+                                We provide information regarding the location where a penggapai lives nearest to where
+                                the deceased will be handled.
+                            </p>
+
+                            <br><br>
+
+                            <h4>Our Mission</h4>
+                            <br>
+                            <p class="desc mx-auto text-justify">
+                                PNY aims to provide quality service to aid the public in finding the nearest, fastest
+                                and
+                                most convenient penggapai for the family of the deceased in times of the grief needs.
+                            </p>
+
+                            <br><br>
+
+                            <h4>Our Vision</h4>
+                            <br>
+                            <p class="desc mx-auto text-justify">
+                                Although still at an early stage, we will strive to provide the most efficient and best
+                                service to the public when they are in need of our service. We will prepare a list of
+                                names of the Penggapai, their contact details and their work locations (masjids) for the
+                                four districts for the public to search at their convenience.
+                            </p>
+
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4" id="contacts">
+                        <div class="hotlines">
+                            <h5>Emergency Numbers:</h5>
+                            <ul>
+                                <li>Ambulance: <b>991</b></li>
+                                <li>Police: <b>993</b></li>
+                                <li>Fire & Rescue: <b>995</b></li>
+
+                            </ul>
+                            <br>
+
+                            <h5>Hotlines:</h5>
+                            <ul>
+                                <li>Ministry of Religious Affairs: <b>+6732382525</b></li>
+                                <li>Department of Mosque Affairs: <b>+6732223264</b></li>
+                            </ul>
+                            <br>
+                            <h5>Mosques: </h5>
+                            <ul>
+                                <li>Masjid Jame'Asri Hassanil Bolkiah, Kg Kiarong (Brunei-Muara): <b>+673238741/2</b>
+                                </li>
+                                <li>Masjid Omar Ali Saiffudien, BSB (Brunei-Muara): <b>+6732222623</b></li>
+                                <li>Masjid Hassanal Bolkiah (Tutong): <b>+6734221282​</b></li>
+                                <li>Masjid Mohammad Jamalul Ala​m (Belait): <b>+673​3334349</b></li>
+                                <li>​Masjid Utama Mohammad Salleh, Pekan Bangar (Temburong): <b>+673​5221420</b></li>
+                            </ul>
+                            <br>
+
+                            <h5>PNY Assist:</h5>
+                            <ul>
+                                <li>+6737236265 </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include ("partials/footer.ejs") %>
+
+                <!-- Java Script ------------------>
+
+
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous"></script>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+                    crossorigin="anonymous"></script>
+
+
+
+    </body>
+
+</html>

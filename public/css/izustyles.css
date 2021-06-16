@@ -1,0 +1,178 @@
+/*=============================================
+    Table of Content:
+        1) Global Styles
+        2) Layouts
+        3) Typography
+        4) Components
+
+==============================================*/
+
+/*================================================
+    1) Global Styles
+================================================*/
+/*Variables*/
+:root {
+	--primary-color: #666666;
+	--secondary-color: #fefae0;
+	--main-bg-color: #fefae0;
+	--secondary-bg-color: #e9edc9;
+	--secondary-bg-color-trans: #e9edc9ad;
+	--highlight-color: #d4a373;
+	--secondary-highlight-color: #515250;
+	--secondary-highlight-color-trans: #515250a8;
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+/*smooth scrolling*/
+html,
+body {
+	scroll-behavior: smooth;
+	background-color: var(--main-bg-color);
+	min-height: 100vh;
+	background-image: url('../img/bg-image.png');
+	background-repeat: no-repeat;
+}
+
+/*===========================================================
+    2) Layouts
+===========================================================*/
+/*small screen layouts*/
+@media (max-width: 799px) {
+	nav {
+		display: flex;
+		justify-content: start;
+		width: 100vw;
+		max-width: 100%;
+		height: 3rem;
+		background-color: var(--secondary-bg-color);
+	}
+	main {
+		background-color: var(--secondary-bg-color-trans);
+		width: 75%;
+		margin: 1.5rem auto;
+		min-height: calc(100vh - 9rem);
+		box-shadow: var(--secondary-highlight-color) 1.5ch 1ch;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	footer {
+		background-color: var(--secondary-bg-color);
+		height: 3rem;
+		display: grid;
+		place-content: center;
+	}
+	.picture {
+		padding: 1ch 1%;
+		text-align: center;
+		justify-content: center;
+	}
+	.content {
+		padding: 0.2rem 1rem;
+		overflow-y: auto;
+	}
+	.picture,
+	.content {
+		width: 100%;
+		border: var(--secondary-highlight-color) solid 1px;
+	}
+}
+/*medium/big screen layouts*/
+@media (min-width: 800px) {
+	nav {
+		display: flex;
+		justify-content: start;
+		width: 100vw;
+		max-width: 100%;
+		height: 3rem;
+		background-color: var(--secondary-bg-color);
+	}
+	main {
+		background-color: var(--secondary-bg-color-trans);
+		width: 75%;
+		margin: 1.5rem auto;
+		min-height: calc(100vh - 9rem);
+		box-shadow: var(--secondary-highlight-color) 1.5ch 1ch;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	footer {
+		background-color: var(--secondary-bg-color);
+		height: 3rem;
+		display: grid;
+		place-content: center;
+	}
+	.picture {
+		width: 18%;
+		padding: 1ch 1%;
+		text-align: center;
+		justify-content: center;
+	}
+	.content {
+		width: 79%;
+		padding: 0.2rem 1rem;
+	}
+	.picture,
+	.content {
+		border: var(--secondary-highlight-color) solid 1px;
+	}
+}
+/*===========================================================
+    3) Typography
+============================================================*/
+.navLinks {
+	text-decoration: none;
+	color: var(--primary-color);
+}
+.navLinks:hover {
+	color: var(--secondary-color);
+}
+h1 {
+	background-color: var(--highlight-color);
+	width: 95%;
+}
+
+/*===========================================================
+    4) Components
+============================================================*/
+.navLinks {
+	display: grid;
+	grid-auto-flow: column;
+	width: 22ch;
+	padding-left: 1ch;
+	align-items: center;
+	justify-content: start;
+	outline: var(--highlight-color) dotted 1px;
+}
+.navLinks:hover {
+	background-color: var(--highlight-color);
+}
+.logoutButton {
+	margin-left: auto;
+	justify-content: end;
+	padding-right: 3ch;
+}
+.profilePic {
+	box-shadow: var(--secondary-highlight-color-trans) 0.75ch 0.5ch;
+	width: 95%;
+}
+fieldset {
+	padding: 1rem 0;
+	margin: 1rem 0;
+	max-width: 95%;
+	min-width: 95%;
+}
+fieldset > p {
+	padding-left: 1rem;
+	word-wrap: break-word;
+}
+.editButton {
+	color: blue;
+	font-size: 0.75rem;
+}
+.editButton:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}

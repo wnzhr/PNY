@@ -1,2 +1,6 @@
-# PNY
-Penggapai Near You
+# PenggapaisNearYou
+
+CodingBN Month 3 Group Project
+
+#Members:
+FWS

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Welcome back <%= name %>
+        </title>
+        <link rel="stylesheet" href="/css/izustyles.css">
+    </head>
+
+    <body>
+        <nav>
+            <a href="/" class="navLinks"><img src="../img/mosque32.png" alt="logo">Home</a>
+            <a href="../#about" class="navLinks">About</a>
+            <a href="../#contacts" class="navLinks">Emergency Contacts</a>
+            <a href="../<%= loginStatus.url %>" class="navLinks logoutButton">
+                <%= loginStatus.state %>
+            </a>
+        </nav>
+        <main>
+            <section class="picture">
+                <img src="<%= picture %>" alt="Profile picture" class="profilePic">
+            </section>
+            <section class="content">
+                <h1>
+                    <%= name %>
+                </h1>
+                <fieldset>
+                    <legend>&nbsp;Gender:</legend>
+                    <p>
+                        <%= gender %>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>&nbsp;Phone number:</legend>
+                    <p>
+                        <%= telephoneNumber %>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>&nbsp;Address:</legend>
+                    <p>
+                        <%= address %>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>&nbsp;Area of activity:</legend>
+                    <p>
+                        <%= areaOfActivity %>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>&nbsp;Comment:</legend>
+                    <p>
+                        <%= comment %>
+                    </p>
+                </fieldset>
+            </section>
+        </main>
+        <footer>
+            &copy; Coding.BN, 2021
+        </footer>
+    </body>
+
+</html>
